@@ -1,7 +1,6 @@
 {
   "name": "math-practice",
   "version": "0.0.0",
-  "homepage": "https://nicojuhari.github.io/math-practice/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

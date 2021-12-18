@@ -1,13 +1,13 @@
 <template>
-  <div class="md:w-1/2 m-auto p-5 shadow-md bg-white">
+  <div class="md:w-1/2 m-auto p-5 shadow-md bg-white rounded-md">
       <div class="grid grid-cols-2 gap-6">
           <div>
             <label>Maximum Number to use in exercise</label>
-            <input class="h-10 text-lg border border-gray-500 rounded-sm p-2 w-full" v-model="maxNumber">
+            <input class="h-10 text-lg border border-gray-500 rounded-md p-2 w-full" v-model="maxNumber">
           </div>
           <div>
             <label>How Many Exercises</label>
-            <input class="h-10 text-lg border border-gray-500 rounded-sm p-2 w-full" 
+            <input class="h-10 text-lg border border-gray-500 rounded-md p-2 w-full" 
                     type="number" 
                     v-model="countExercises" 
                     min="0"

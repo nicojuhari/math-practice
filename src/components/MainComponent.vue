@@ -2,7 +2,7 @@
   <div class="md:w-1/2 m-auto p-5 shadow-md bg-white rounded-md">
       <div class="grid grid-cols-2 gap-6">
           <div>
-            <label>Maximum Number to use in exercise</label>
+            <label>Maximum Number to use</label>
             <input class="h-10 text-lg border border-gray-500 rounded-md p-2 w-full" v-model="maxNumber">
           </div>
           <div>

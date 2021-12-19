@@ -45,10 +45,13 @@
       </div>
   </div>
   <div class="mt-9 md:w-1/2 m-auto p-5" id="print">
-      <div class="grid grid-cols-3 gap-4 text-xl">
+      <div class="grid grid-cols-3 gap-4 text-xl" id="print-area">
             <div v-for="item, idx in exercises" :key="idx">
               {{ item.numberOne }} {{ item.operation }} {{ item.numberTwo }}  = {{ showResult ? item.result : null }}
             </div>
+      </div>
+      <div v-if="exercises.length">
+          <button @click="print" class="bg-red-500 rounded-md border-0 h-10 px-6 text-white m-auto mt-6">Print</button>
       </div>
   </div>
 </template>
@@ -122,6 +125,46 @@
         }
         
 
+    }
+
+    const print = (e) => {
+        e.preventDefault()
+
+        const prtContent = document.querySelector("#print-area");
+        const documentHeader = document.querySelector("head")
+
+        const printStyle = document.createElement("style");
+        printStyle.innerHTML = `
+            @media print {
+                @page {
+                    size: A4;
+                    margin: 0;
+                }
+                body {
+                    margin: 1.5rem;
+                    position: static;     
+                    overflow: visible;
+                }
+                .print-area {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    position: static;     
+                    overflow: visible;
+                }
+            }`;
+        
+        const WinPrint = window.open('', 'blank', 'left=0,top=0,width=800,height=1200,toolbar=0,scrollbars=0,status=0');
+        
+        WinPrint.document.write(documentHeader.outerHTML);
+        WinPrint.document.write(prtContent.outerHTML);
+        WinPrint.document.body.appendChild(printStyle);
+        
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        // WinPrint.close();
     }
 
 </script>

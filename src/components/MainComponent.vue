@@ -111,6 +111,8 @@
             numberTwo = n2
             
             if(['-','/'].includes(operation)) n1 < n2 ? (numberOne = n2, numberTwo = n1) : null
+
+            if(numberOne == 1 || numberTwo == 1) continue;
             
             const exercise = {
                 numberOne, 
@@ -143,7 +145,7 @@
                 body {
                     margin: 1.5rem;
                     position: static;     
-                    overflow: visible;
+                    overflow: hidden;
                 }
                 .print-area {
                     display: block;

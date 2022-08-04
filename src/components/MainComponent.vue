@@ -51,7 +51,7 @@
             </div>
       </div>
       <div v-if="exercises.length">
-          <button @click="print" class="bg-red-500 rounded-md border-0 h-10 px-6 text-white m-auto mt-6">Print</button>
+          <button @click="print" class="bg-red-500 rounded-md border-0 h-10 px-6 text-white m-auto mt-6">Print A4</button>
       </div>
   </div>
 </template>
